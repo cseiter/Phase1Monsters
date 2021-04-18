@@ -42,10 +42,11 @@ function createMonsterDiv(monsterObj) {
     }   
 
 function showMonsters(monstersArray) {
-    const monsterObj = monstersArray[0];
     const monsterContainer = document.getElementById('monster-container');
-    const monsterDiv = createMonsterDiv(monsterObj);
-    monsterContainer.appendChild(monsterDiv);
+    monstersArray.forEach(monsterObj => {
+        const monsterDiv = createMonsterDiv(monsterObj);
+        monsterContainer.appendChild(monsterDiv);
+        });
     }
 
 showMonsters(testMonsterArray);
