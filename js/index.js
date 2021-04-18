@@ -21,8 +21,8 @@ const testMonsterArray = [
     }
 ]
 
-function getMonsters() {
-    const builtURL = `${rootURL}monsters/?_limit=50&_page=1`;
+function getMonsters(page) {
+    const builtURL = `${rootURL}monsters/?_limit=50&_page=${page}`;
     return fetch(builtURL)
         .then(r => r.json())
     }
@@ -49,4 +49,4 @@ function showMonsters(monstersArray) {
         });
     }
 
-showMonsters(testMonsterArray);
+getMonsters().then(showMonsters);
